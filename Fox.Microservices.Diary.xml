@@ -1,0 +1,134 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Fox.Microservices.Diary</name>
+    </assembly>
+    <members>
+        <member name="M:Fox.Microservices.Diary.Controllers.DiaryController.Customer(System.String,System.Nullable{System.DateTime},System.Nullable{System.Int32})">
+            <summary>
+            Given a customer ID returns all customer's appointments
+            </summary>
+            <param name="id">The customer ID</param>
+            <param name="MinDate">Minimum date from which show appointments (Format YYYY-MM-DD).
+            If not set use today as default value.
+            To get all the customer's appointments use 0001-01-01</param>
+            <returns>Customer's addresses</returns>
+        </member>
+        <member name="M:Fox.Microservices.Diary.Controllers.DiaryController.Shop(System.String,System.String,System.String,System.String,System.Nullable{System.DateTime},System.Nullable{System.Int32})">
+            <summary>
+            Returns all the appointment booked for the shopt on a specific date
+            </summary>
+            <param name="id">Shop code</param>
+            <param name="serviceCodes">appointment service code filter (| separeted)</param>
+            <param name="statusCodes">appointment status code filter (| separeted)</param>
+            <param name="employeeCodes">appointment employee code filter (| separeted)</param>
+            <param name="appointmentDate">Appointment date (default today)</param>
+            <param name="MaxResultsCount">Max record to be returned</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fox.Microservices.Diary.Controllers.DiaryController.Get(System.Guid)">
+            <summary>
+            Retrieve appointment data
+            </summary>
+            <param name="rowGuid">Appointment rowGuid</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fox.Microservices.Diary.Controllers.DiaryController.Post(Fox.Microservices.Diary.Models.AppointmentBase,System.String,System.String,System.String)">
+            <summary>
+            Insert an appointment
+            </summary>
+            <param name="value">Appointment data</param>
+            <param name="campaignCode">Campaign code associated with the new appointment (optional)</param>
+            <param name="mediaTypeCode">Campaign media type code associated with the new appointment (optional)</param>
+            <param name="callID">CallID associated with the new appointment (optional)</param>
+            <returns></returns>
+        </member>
+        <member name="M:Fox.Microservices.Diary.Controllers.DiaryController.Put(System.Guid,Fox.Microservices.Diary.Models.AppointmentBase)">
+            <summary>
+            Update an appointment
+            </summary>
+            <param name="rowGuid">Appointment rowGuid</param>
+            <param name="value">Appointment data</param>
+        </member>
+        <member name="M:Fox.Microservices.Diary.Controllers.DiaryController.CustomerNextAppointment(System.String)">
+            <summary>
+            Return the next (or the last if there's no next one) appointment for a given customer
+            </summary>
+            <param name="id">Customer's ID</param>
+            <returns>Next (or Last) customer's appointment info</returns>
+        </member>
+        <member name="M:Fox.Microservices.Diary.Controllers.DiaryController.CustomerFiltered(System.String,System.Nullable{System.DateTime},System.String,System.String)">
+            <summary>
+            Given a customer ID returns all customer's appointments eventually filtered by date and/or Service Codes and/or Status codes
+            </summary>
+            <param name="id">The customer ID</param>
+            <param name="MinDate">Minimum date from which show appointments (Format YYYY-MM-DD).
+            If not set use today as default value.
+            To get all the customer's appointments use 0001-01-01</param>
+            <param name="ServiceCodes">Service codes to filter, separated by | (pipe)</param>
+            <param name="StatusCodes">Status codes to filter, separated by | (pipe)</param>
+            <returns>Customer's appointments</returns>
+        </member>
+        <member name="M:Fox.Microservices.Diary.Controllers.DiaryController.UpdateAppointmentStatus(System.Guid,System.String)">
+            <summary>
+            Update and appointment to a new status
+            </summary>
+            <param name="rowGuid">Appointment rowguid</param>
+            <param name="statusCode">new appointment status code</param>
+        </member>
+        <member name="M:Fox.Microservices.Diary.Controllers.DiaryController.GetWorkingClinician(System.String,System.DateTime,System.String)">
+            <summary>
+            Retrieve clinicians with valid working hours on a specific shop/date/employee types
+            </summary>
+            <param name="shopCode">Shop code</param>
+            <param name="date">Date</param>
+            <param name="employeeTypeCodes">Employee type codes ( | separated list), defaulted to SRO if null </param>
+            <returns></returns>
+        </member>
+        <member name="F:Fox.Microservices.Diary.Helpers.AppointmentStatusHelper.Closed">
+            <summary>
+            Closed status code
+            </summary>
+        </member>
+        <member name="F:Fox.Microservices.Diary.Helpers.AppointmentStatusHelper.Deleted">
+            <summary>
+            Deleted status code
+            </summary>
+        </member>
+        <member name="F:Fox.Microservices.Diary.Helpers.AppointmentStatusHelper.NotCompleted">
+            <summary>
+            Not completed status code
+            </summary>
+        </member>
+        <member name="F:Fox.Microservices.Diary.Helpers.AppointmentStatusHelper.Completed">
+            <summary>
+            Completed status code
+            </summary>
+        </member>
+        <member name="F:Fox.Microservices.Diary.Helpers.AppointmentStatusHelper.Rescheduled">
+            <summary>
+            Rescheduled status code
+            </summary>
+        </member>
+        <member name="F:Fox.Microservices.Diary.Helpers.AppointmentStatusHelper.CheckIn">
+            <summary>
+            Check-in status code
+            </summary>
+        </member>
+        <member name="F:Fox.Microservices.Diary.Helpers.AppointmentStatusHelper.Error">
+            <summary>
+            Error status code
+            </summary>
+        </member>
+        <member name="F:Fox.Microservices.Diary.Helpers.AppointmentStatusHelper.Confirmed">
+            <summary>
+            Confirmed status code
+            </summary>
+        </member>
+        <member name="F:Fox.Microservices.Diary.Helpers.AppointmentStatusHelper.Arrived">
+            <summary>
+            Arrived status code
+            </summary>
+        </member>
+    </members>
+</doc>
